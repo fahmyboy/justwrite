@@ -1,14 +1,18 @@
 console.log('wired up')
+const pomodoroTimer = document.getElementById('pomodoro_timer');
 const pomodorTimerSecond = document.getElementById('pomodoro_timer_second');
 const pomodorTimerMinute = document.getElementById('pomodoro_timer_minute');
 const wordCountDiv = document.getElementById('word_count');
 const textInputArea = document.getElementById('main_text_input');
+
+
 
 //counter
 (function countdown(){
     
     let minute = 24;
     let second= 59;
+
     pomodorTimerMinute.innerText = minute;
 
     decrementByOneSecond();
@@ -29,8 +33,10 @@ const textInputArea = document.getElementById('main_text_input');
                 minute--;
                  pomodorTimerMinute.innerText = minute;
                 
-                second= 59;
+                second= 59; //reset second
                 decrementByOneSecond();
+        }else{
+            pomodoroTimer.innerText = "Put your pen down";
         }
     }
 })();
