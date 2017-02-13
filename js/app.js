@@ -59,8 +59,8 @@ textInputArea.addEventListener('keypress', handleClick)
  
  const getBackGroundImage = function(){
     //return "url('imgs/Tunnel of trees.jpg')";
-   // return "url('images/write.jpg')";
- return "url('images/guywritingwhilesmoking.png')";
+    return "url('images/write.jpg')";
+// return "url('images/guywritingwhilesmoking.png')";
     
 }
 
