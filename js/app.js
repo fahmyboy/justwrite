@@ -4,7 +4,7 @@ const pomodorTimerSecond = document.getElementById('pomodoro_timer_second');
 const pomodorTimerMinute = document.getElementById('pomodoro_timer_minute');
 const wordCountDiv = document.getElementById('word_count');
 const textInputArea = document.getElementById('main_text_input');
-
+const fullScreenButton = document.getElementById('button_full_screen');
 
 
 //counter
@@ -48,7 +48,9 @@ textInputArea.focus();
 let wordcount = 0;
 //word counter
 const wordsArray = [];
+let bFullScreen = false;
 const handleClick = function(e){
+
     if (e.keyCode === 32){
         wordcount++;
         wordCountDiv.innerText = wordcount;
@@ -72,3 +74,18 @@ textInputArea.addEventListener('keypress', handleClick)
     let background_img = getBackGroundImage();
     document.body.style.backgroundImage  = background_img;
 	document.body.style.backgroundSize = "cover";
+//button full button_full_screen
+
+let enterfullscreen = function(){
+    fullScreenButton.style.visibility  = "hidden"; //hide the full screen button
+
+    const docRoot = document.documentElement;
+    docRoot.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+    docRoot.mozRequestFullScreen();
+    docRoot.msRequestFullscreen();
+    docRoot.requestFullscreen(); // standard
+    
+};
+
+
+fullScreenButton.onclick = enterfullscreen;
