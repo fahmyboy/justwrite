@@ -78,6 +78,7 @@ textInputArea.addEventListener('keypress', handleClick)
 
 let enterfullscreen = function(){
     fullScreenButton.style.visibility  = "hidden"; //hide the full screen button
+    textInputArea.focus();
 
     const docRoot = document.documentElement;
     docRoot.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
